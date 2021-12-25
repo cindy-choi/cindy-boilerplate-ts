@@ -1,8 +1,6 @@
 export const ROUTES = {
   ROOT: '/',
-  MY: '/my',
-  TUTORIALS: '/tutorials',
-  FAQ: '/faq',
+  ABOUT: '/about',
 };
 
 export default ROUTES;

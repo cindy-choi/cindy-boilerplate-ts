@@ -59,9 +59,8 @@ export const TheHeader = () => {
   const location = useLocation();
 
   const menuList = [
-    { title: t('menu.my'), href: ROUTES.MY, },
-    { title: t('menu.tutorials'), href: ROUTES.TUTORIALS, },
-    { title: t('menu.faq'), href: ROUTES.FAQ, },
+    { title: t('menu.main'), href: ROUTES.ROOT, },
+    { title: t('menu.about'), href: ROUTES.ABOUT, },
   ];
 
   const handleMenuItemClick = (href: string) => {
