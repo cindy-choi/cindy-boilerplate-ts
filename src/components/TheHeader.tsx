@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import ROUTES from '@/constants/routes';
@@ -8,14 +8,13 @@ const HeaderWrapper = styled.div`
   width: 100%;
   height: 100px;
   overflow: hidden;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: center;
   align-items: center;
 
   .header__inner {
+    padding: 0 2rem;
     width: 100%;
-    max-width: 1024px;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -23,7 +22,6 @@ const HeaderWrapper = styled.div`
   }
 
   .logo {
-    img { width: 175px; height: 33px; }
     cursor: pointer;
   }
 
@@ -40,16 +38,13 @@ const HeaderWrapper = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: var(--black-50);
+    color: var(--black);
 
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
 
-    &:hover { color: var(--black-80); }
-    &.active, &:active { color: var(--primary); }
-    &.current { color: var(--primary); }
-    &.disabled { color: var(--black-15); }
+    &:hover { font-weight: 700; }
+    &.active, &:active { font-weight: 700; color: var(--white); }
   }
 `;
 
@@ -59,8 +54,9 @@ export const TheHeader = () => {
   const location = useLocation();
 
   const menuList = [
-    { title: t('menu.main'), href: ROUTES.ROOT, },
     { title: t('menu.about'), href: ROUTES.ABOUT, },
+    { title: t('menu.projects'), href: ROUTES.PROJECTS, },
+    { title: t('menu.contact'), href: ROUTES.CONTACT, },
   ];
 
   const handleMenuItemClick = (href: string) => {
@@ -75,7 +71,7 @@ export const TheHeader = () => {
     <HeaderWrapper>
       <div className="header__inner">
         <div className="logo" onClick={() => handleMenuItemClick(ROUTES.ROOT)}>
-          <p>Sample</p>
+          <p>C</p>
         </div>
 
         <div className="menu-list">
