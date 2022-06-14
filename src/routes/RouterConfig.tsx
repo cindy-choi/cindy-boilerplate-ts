@@ -14,6 +14,9 @@ export const RouterConfig = () => {
       <BasicLayout>
         <Routes>
           <Route path={ROUTES.ROOT} element={<Main />} />
+          <Route path={ROUTES.ABOUT} element={<Main />} />
+          <Route path={ROUTES.PROJECTS} element={<Main />} />
+          <Route path={ROUTES.CONTACT} element={<Main />} />
 
           <Route path="*" element={<Navigate to={ROUTES.ROOT} />} />
         </Routes>
